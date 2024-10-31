@@ -110,7 +110,7 @@ body {
 
 .product-cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* Cantidad de tarjetas por columna*/
     gap: 20px;
     padding: 3rem;
 }
@@ -121,9 +121,10 @@ body {
     text-align: center;
 }
 
-.card img {
-    width: 100%;
-    height: 200px;
+.card img { 
+    width: 100%; /* ancho 100% */
+    height: 450px; /* alto */
+    object-fit: cover;
 }
 
 .card .product-info {
@@ -153,6 +154,22 @@ body {
 .logo-footer img {
     width: 50px;
 }
+
+
+.prueba {
+    width: 100%; /*Ancho 100%*/
+    background-color: #bbbbbb; /* color */
+    height: 100px; /* alto */
+    color: #0c498f ; /* color de letra */
+
+    /*Para centar todo el contenido*/
+    display: flex;
+    justify-content: center; /* centrar horizontal*/
+    align-items: center; /* centrar vertical*/
+}
+
+
+
 
 /* DISEÑO RESPONSIVE */
 @media (max-width: 768px) {
