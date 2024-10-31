@@ -7,13 +7,16 @@ dotenv.config();
 const app = express();
 
 async function connectDatabase() {
+
     try {
         const connection = await mysql.createConnection({
             host: process.env.MYSQL_HOST,
             user: process.env.MYSQL_USER,
             password: process.env.MYSQL_PASSWORD,
             database: process.env.MYSQL_DATABASE,
+            port: process.env.MYSQL_PORT
         });
+        
         console.log('Database connected');
         return connection;
     } catch (err) {
@@ -27,7 +30,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 (async () => {
     const conexion = await connectDatabase();
-
     app.listen(process.env.PORT, process.env.HOST, () => {
         console.log('Server is running on PORT ', process.env.PORT);
     });

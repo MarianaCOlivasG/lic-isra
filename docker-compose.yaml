@@ -14,16 +14,12 @@ services:
   mysql:
     image: mysql:8.0
     ports:
-      - "3306:3306"
+      - "3310:3306"
     environment:
       MYSQL_ROOT_PASSWORD: aAbBcCdDeE
       MYSQL_DATABASE: shopDB
     volumes:
       - mysql_data:/var/lib/mysql
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      interval: 10s
-      retries: 5
     networks:
       - app_network
 
@@ -32,4 +28,3 @@ volumes:
 
 networks:
   app_network:
-    driver: bridge
