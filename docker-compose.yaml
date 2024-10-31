@@ -16,7 +16,7 @@ services:
     ports:
       - "3310:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: Olivas031523
+      MYSQL_ROOT_PASSWORD: aAbBcCdDeE
       MYSQL_DATABASE: shopDB
     volumes:
       - mysql_data:/var/lib/mysql
